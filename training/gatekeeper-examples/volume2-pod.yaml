@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-volume-types-disallowed
+  labels:
+    app: nginx-volume-types
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+    - mountPath: /cache
+      name: cache-volume
+    - mountPath: /flag
+      name: flag-volume
+ 
+  volumes:
+  - name: flag-volume
+    hostPath:
+      path: /flag
+  - name: cache-volume
+    hostPath:
+      path: /tmp 
+  

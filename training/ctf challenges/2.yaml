@@ -1,0 +1,3 @@
+./kubectl get secrets
+
+./kubectl get secret image-registry -o yaml

@@ -1,0 +1,26 @@
+kubectl exec etcd-master -n kube-system etcdctl get / -- prefix -keys-only
+
+Controller
+    - Node controller - checks the status of the nodes every 5 seconds, a node is marked unreachable after every 40 seconds
+    - Replication controller
+    - Deployment controller
+    - ALl other controllers
+    - Controller is the brain in the cluster, Kube-controller manager is the one which is installed
+
+Scheduler only decides which pods goes on which nodes, but does not schedule it.
+    - Filter out the nodes that do not fit the profile.
+    - Ranks the nodes which are the best fits.
+
+Kubelet requests the container runtime engine to pull the image and run it, then reports the status of the pods and notifies the kube apiserver on a timely basis.
+
+Service is a virtual component only lives in cluster memory. Kube proxy is a process runs on each nodes, looks for new services, it creates the appropriate rules for each nodes.
+
+Containers are encapsulated in a k8s object known as pod.
+
+Services - NodePort, ClusterIP, Loadbalancer, nodeport - 30000 to 32767
+
+Static pods:- Kubelet can manage a node all one. Configure kubelet to read the directory where the manifest files are kept. Kubelet periodacally reads the directory 
+"--pod-manifest-path="path to the directory where static pods are kept"
+
+Implementing encryption - The kube-apiserver process accepts an argument --encryption-provider-config that controls how 
+api data is encrypted in etcd.

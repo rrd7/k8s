@@ -1,0 +1,39 @@
+OPA is an open source, general-purpose policy engine that enabled unified, context-aware policy enforcement across the entire stack.
+- not k8s specific
+- works with json/yamlin k8s it uses admission controllers
+- rego language
+- does not know the concepts like pods and deployments
+
+opa gatekeeper uses OPA by creating Custom Resource Definition.
+
+Constraint Template -> constraint
+
+
+ALways pull images - Mutating admission controller.
+
+
+kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.5/deploy/gatekeeper.yaml
+package main
+
+deny[msg]{
+    x > y
+    y = 41
+    x = 42
+}
+
+Rego is not a general purpose language. Its just for quering data.
+
+
+deny[msg]{
+    input.kind == "Deployment" #true
+    not input.spec.selector.matchLabels.app #false as it is there
+    msg = "Containers must have labels"
+}
+
+All the expressions are and ed together.
+
+required := {key | input.container.securityContext[key]}
+
+policy 1 = one one volume
+policy 2 = only /flag directory
+policy 3 = only hostpath volume should be allowed

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: simple-app
+  labels:
+    app: app1
+    function: front-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:  
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+        function: front-end
+    spec:
+      containers:
+        - name: simple-app
+          image: nginx
+              
+
+    

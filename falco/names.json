@@ -1,0 +1,16 @@
+{
+    "names": [
+        {
+            "lastname": "Scott", 
+            "firstname": "Michael"
+        }, 
+        {
+            "lastname": "Halpert", 
+            "firstname": "Jim"
+        }, 
+        {
+            "lastname": "Beasley", 
+            "firstname": "Pam"
+        }
+    ]
+}

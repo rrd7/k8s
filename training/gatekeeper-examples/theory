@@ -1,0 +1,17 @@
+Kubernetes allows decoupling policy decisions from the inner workings of the API Server by means of admission controller webhooks,
+which are executed whenever a resource is created, updated or deleted. Gatekeeper is a validating (mutating TBA) webhook that enforces
+CRD-based policies executed by Open Policy Agent, a policy engine for Cloud Native environments hosted by CNCF as an incubation-level project.
+
+- An extensible, parameterized policy library
+- Native Kubernetes CRDs for instantiating the policy library (aka "constraints")
+- Native Kubernetes CRDs for extending the policy library (aka "constraint templates")
+- Audit functionality
+
+
+Currently Gatekeeper is defaulting to using failurePolicy​: ​Ignore for admission request webhook errors.
+The impact of this is that when the webhook is down, or otherwise unreachable, constraints will not be enforced. 
+Audit is expected to pick up any slack in enforcement by highlighting invalid resources that made it into the cluster.
+
+
+Before you can define a constraint, you must first define a ConstraintTemplate, which describes both the Rego that enforces the constraint and the schema
+of the constraint. The schema of the constraint allows an admin to fine-tune the behavior of a constraint, much like arguments to a function.

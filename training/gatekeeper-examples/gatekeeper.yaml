@@ -1,0 +1,14 @@
+kind: AdmissionReview
+apiVersion: admission.k8s.io/v1beta1
+request:
+  kind:
+    kind: pod
+  object:
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: new-pod
+    spec:
+      containers:
+        - image: nginx
+          name: nginx

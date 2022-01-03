@@ -1,0 +1,19 @@
+[
+    {
+      "required_engine_version": 2
+    },
+    {
+      "macro": "k8s_audit_always_true",
+      "condition": "(jevt.rawtime exists)"
+    },
+    {
+      "macro": "k8s_audit_never_true",
+      "condition": "(jevt.rawtime=0)"
+    },
+    {
+      "list": "k8s_audit_stages",
+      "items": [
+        "ResponseComplete"
+      ]
+    }
+  ]

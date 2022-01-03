@@ -1,0 +1,33 @@
+for var in {1..34..1}; do k create ns ns$var; done
+
+for var in {1..34..1};
+do
+kubectl create secret docker-registry image-registry --docker-username=temp2 --docker-password=Fsxt36dh5mttkOowi=tCKiuMrBaPrJ6b --docker-server=temp2.azurecr.io -n ns$var; 
+echo '------------';
+done
+
+
+for var in {1..34..1}; 
+do 
+k expose pod base --type=NodePort --port=22 -n ns$var
+echo '-----------';
+done
+
+
+for var in {1..34..1};
+do
+k create -f base-role.yaml -n ns$var;
+
+
+echo '-------------';
+done
+
+
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns1:privileged --namespace=ns1
+
+for var in {1..34..1};
+do
+k exec -it base -n ns$var -- cat flag.txt 
+
+echo '-------------';
+done

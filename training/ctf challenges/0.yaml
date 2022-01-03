@@ -1,0 +1,3 @@
+ssh root@<ip> -p <port>
+cd /
+cat flag.txt

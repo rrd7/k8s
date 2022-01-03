@@ -1,0 +1,132 @@
+#Commands
+
+# kubectl get pods -o wide
+# kubectl describe pod <pod_name>
+# kubectl get pods -n kube-system
+# kubectl run <pod_name> --image=<image_name>
+# kubectl create deployment <deployment_name> --image=<image_name>
+
+# kubectl create -f <filename.yaml>
+# all the specifications below are separated by "---". In case of practice create each one of them individually.
+
+#taints and tolerations
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  tolerations:
+    - key: "app"
+      operator: "equal"
+      value: "blue"
+      effect: "NoSchedule"
+
+---
+
+#host path volume
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+    - mountPath: /opt
+      name: data-volume
+  
+  volumes:
+  - name: data-volume
+    hostPath: 
+      path: /etc
+      type: Directory
+
+---
+
+#Replication set
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: simple-app
+  labels:
+    app: app1
+    function: front-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:  
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+        function: front-end
+    spec:
+      containers:
+        - name: simple-app
+          image: nginx
+
+---
+
+# Deamonset
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds
+spec:
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+     containers:
+       - name: nginx
+         image: nginx
+         resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+
+
+---
+
+# Service account mount 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sapod
+  labels:
+    name: sapod
+spec:
+  serviceAccountName: privileged
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"

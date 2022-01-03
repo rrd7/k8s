@@ -1,0 +1,35 @@
+k run nginx --image nginx
+k create deployment nginx --image=nginx
+k expose deployment nginx --port 80
+k scale deployment nginx --replicas=5
+k edit deployment nginx
+k set image deployment nginx nginx=nginx:1.18
+k create -f nginx.yaml
+k replace -f nginx.yaml
+k delete -f nginx.yaml
+
+k get pods --selector app=app1
+
+k logs -f nginx 
+k logs <pod_name> <container_name>
+
+export KUBERNETES_SERVICE_HOST=10.96.0.1
+export KUBERNETES_SERVICE_PORT=443
+apt-get update && upt-get install curl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod 755 kubectl
+
+
+
+openssl x509 -in acs.cdroutertest.com.pem -text
+
+curl http://localhost:8001/api/v1 | jq .resources[].name
+
+curl http://localhost:8001/api/v1/secrets | jq .items[0]
+
+curl http://localhost:8001/api/v1/secrets | jq .items[50].metadata.name
+
+
+docker run -it --rm alpine /bin/sh
+whoami sleep 100
+ps -fC sleep

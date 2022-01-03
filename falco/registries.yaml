@@ -1,0 +1,6 @@
+registries:
+  - docker.io
+  - gcr.io
+  - azr.io
+  - temp.io
+  - ecr.io

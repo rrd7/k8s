@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  
+  name: privileged
+rules:
+- apiGroups: 
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - '*'
+
+
+---
+
+kubectl create rolebinding pod-viewer \
+  --role=privileges \
+  --serviceaccount=default:privileges

@@ -1,0 +1,71 @@
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns1:privileged --namespace=ns1
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns2:privileged --namespace=ns2
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns3:privileged --namespace=ns3
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns4:privileged --namespace=ns4
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns5:privileged --namespace=ns5
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns6:privileged --namespace=ns6
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns7:privileged --namespace=ns7
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns8:privileged --namespace=ns8
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns9:privileged --namespace=ns9
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns10:privileged --namespace=ns10
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns11:privileged --namespace=ns11
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns12:privileged --namespace=ns12
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns13:privileged --namespace=ns13
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns14:privileged --namespace=ns14
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns15:privileged --namespace=ns15
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns16:privileged --namespace=ns16
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns17:privileged --namespace=ns17
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns18:privileged --namespace=ns18
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns19:privileged --namespace=ns19
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns20:privileged --namespace=ns20
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns21:privileged --namespace=ns21
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns22:privileged --namespace=ns22
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns23:privileged --namespace=ns23
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns24:privileged --namespace=ns24
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns25:privileged --namespace=ns25
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns26:privileged --namespace=ns26
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns27:privileged --namespace=ns27
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns28:privileged --namespace=ns28
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns29:privileged --namespace=ns29
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns30:privileged --namespace=ns30
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns31:privileged --namespace=ns31
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns32:privileged --namespace=ns32
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns33:privileged --namespace=ns33
+k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns34:privileged --namespace=ns34
+
+
+   477  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=privileged -n=ns1
+  478  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns1:privileged
+  479  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns2:privileged
+  480  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns3:privileged
+  481  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns4:privileged
+  482  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns5:privileged
+  483  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns6:privileged
+  484  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns7:privileged
+  485  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns8:privileged
+  486  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns9:privileged
+  487  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns10:privileged
+  488  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns11:privileged
+  489  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns12:privileged
+  490  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns13:privileged
+  491  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns14:privileged
+  492  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns15:privileged
+  493  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns16:privileged
+  494  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns17:privileged
+  495  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns18:privileged
+  496  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns19:privileged
+  497  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns20:privileged
+  498  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns21:privileged
+  499  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns22:privileged
+  500  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns23:privileged
+  501  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns24:privileged
+  502  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns25:privileged
+  503  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns26:privileged
+  504  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns27:privileged
+  505  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns28:privileged
+  506  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns29:privileged
+  507  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns30:privileged
+  508  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns31:privileged
+  509  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns32:privileged
+  510  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns33:privileged
+  511  k create rolebinding privilegedrolebinding --role=privileged --serviceaccount=ns34:privileged

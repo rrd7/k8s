@@ -1,0 +1,9 @@
+Task - containers within a pod has the same network namespaces, and hence can call each other with localhost.
+
+
+
+Task - check ip table rules, and look for traffic getting forwarded from services to pods. Kube proxy is deployed as a daemonset.
+
+
+
+Task - work with etcdctl

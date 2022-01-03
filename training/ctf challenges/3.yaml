@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: challenge3
+  labels:
+    name: base
+spec:
+  containers:
+  - name: base
+    image: temp2.azurecr.io/challenge3
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  imagePullSecrets:
+  - name: image-registry
